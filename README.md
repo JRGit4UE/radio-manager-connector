@@ -1,5 +1,8 @@
 # radio-manager-connector
-Subscriber for analysis jobs and middleware to handle these analysis jobs
+
+Connector to integrate visual analysis services from [JOANNEUM RESEARCH](https://www.joanneum.at/en/digital) with [PLUXBOX](http://pluxbox.com) RadioManager, developed as part of the [MARCONI](https://www.projectmarconi.eu/) project.
+
+The connector consists of a subscriber for analysis jobs and a middleware to handle these analysis jobs and forward them to instances of the analysis service.
 
 ## Subscriber
 The subscriber app is a *Node.js* application which *GraphQL* subscribes for analysis 
