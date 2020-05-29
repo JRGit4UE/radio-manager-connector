@@ -5,7 +5,7 @@ Subscriber for analysis jobs and middleware to handle these analysis jobs
 The subscriber app is a *Node.js* application which *GraphQL* subscribes for analysis 
 [jobs](https://google.com) 
 
-To build the subscriber, open a shell, *cd* into this directory and execute:
+To build the subscriber, open a shell, *cd* into the *create_job* directory and execute:
 
 ```
 npm install
@@ -19,7 +19,7 @@ node index.js
 ## Middleware
 The middleware app is a *Tomcat* resteasy servlet that offers a REST API to handle analysis jobs
 
-To build the servlet, open a shell, *cd* into this directory and execute:
+To build the servlet, open a shell, *cd* into the *fims_ame* directory and execute:
 
 ```
 mvn clean install -DskipTests=true

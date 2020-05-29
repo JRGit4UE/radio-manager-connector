@@ -1,0 +1,22 @@
+{
+"version":"v1.0.0",
+"description":"Config file for fims-ame",
+"gpuHost":true,
+"targetRootFolder":"/home/tomcat/data",
+"tempFolder":"%s/webapps/fims2/temp",
+"videoProxyCmd":"ffmpeg -y -i %s -vf scale=640:-2 -c:v libx264 -c:a copy %s",
+"imageProxyCmd":"ffmpeg -y -i %s -vf scale=640:-1 %s",
+"gstWorkingDirGPU":"/home/tomcat/JRS_Gstreamer_Modules",
+"gstWorkingDir":"/home/tomcat/JRS_Gstreamer_Modules",
+"gstLibraryPath":"LD_LIBRARY_PATH=%s/IPP/intel64:%s/IPP/intel64_legacy/:/usr/local/cuda/lib64",
+"videoSegmentationCmd":"gst-launch-1.0 --gst-plugin-path=./ filesrc -v location=%s ! decodebin !  queue ! videoconvert ! jrsimageconverter ! tee name=imageTee ! queue ! jrshardcutdetector name=hardcutDet ! jrskeyframeextractor name=keyframeExt dataDirectory=\"%s\" ! jrskeyframedescriptor name=keyframeDesc ! progressreport update-freq=1 ! filesink location=\"%s\" hardcutDet. ! application/jrs-image ! keyframeExt. hardcutDet. ! application/jrs-frame_description ! keyframeDesc. hardcutDet. ! jrstransitiondescriptor ! progressreport update-freq=1 ! filesink location=\"%s\"",
+"videoFaceCmd":"gst-launch-1.0 --gst-plugin-path=./ filesrc -v location=%s ! decodebin ! videoconvert ! queue ! jrsimageconverter name=imageconverter ! queue ! capsfilter caps=\"application/jrs-image, realtime=(bool)false, skipFrames=(int)5, max_buffer_size=(int)250\" ! jrsfacedetector dataDirectory=\"%s\" ! filesink location=\"%s\"",
+"videoFaceObjectSleep":" && sleep 20s && ",
+"videoObjectCmd":"gst-launch-1.0 --gst-plugin-path=./ filesrc -v location=%s ! decodebin ! videoconvert ! queue ! jrsimageconverter name=imageconverter ! queue ! capsfilter caps=\"application/jrs-image, realtime=(bool)false, skipFrames=(int)10, max_buffer_size=(int)250\" ! jrsyolodetector ! filesink location=\"%s\"",
+"imageFaceCmd":"gst-launch-1.0 --gst-plugin-path=./ filesrc -v location=%s ! decodebin ! videoconvert ! queue ! jrsimageconverter name=imageconverter ! queue ! capsfilter caps=\"application/jrs-image, realtime=(bool)false, skipFrames=(int)1, max_buffer_size=(int)250\" ! jrsfacedetector dataDirectory=\"%s\" ! filesink location=\"%s\"",
+"imageFaceObjectSleep":" && sleep 20s && ",
+"imageObjectCmd":"gst-launch-1.0 --gst-plugin-path=./ filesrc -v location=%s ! decodebin ! videoconvert ! queue ! jrsimageconverter name=imageconverter ! queue ! capsfilter caps=\"application/jrs-image, realtime=(bool)false, skipFrames=(int)0, max_buffer_size=(int)250\" ! jrsyolodetector ! filesink location=\"%s\"",
+"visualQualityAnalysisCmd":"gst-launch-1.0 --gst-plugin-path=./ filesrc -v location=%s ! decodebin ! videoconvert ! queue ! jrsimageconverter  ! tee name=imageTee imageTee. ! queue ! jrsnoiselevel ! jrsdqdescriptor name=desc ! filesink location=\"%s\" imageTee. ! queue ! jrssharpnessextraction ! desc. imageTee. ! queue ! jrsmacroblocking ! desc.",
+"targetBaseUrlGPU":"http://localhost:8080/data",
+"targetBaseUrl":"http://localhost:8080/data"
+}

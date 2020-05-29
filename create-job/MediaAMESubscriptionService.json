@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "description": "Configuration for MediaAMESubscriptionService",
+
+  "engineEndpoint":  "engine.staging.vrt.privaults.eu",
+  "ssl": true,
+
+  "applicationPath": "/application/{{applicationKey}}",
+  "subscriptionPath": "/subscriptions?applicationId={{applicationKey}}&authToken={{authToken}}",
+
+  "applicationKey": "6",
+  "apiAuthMethod": "sha512",
+  "apiKey": "get-the-api-key",
+  "apiSecret": "get-the-api-secret",
+
+  "s3BucketName": "get-the-name",
+  "s3BucketKey": "get-the-key",
+
+  "middlewareUrl": "get-the-url"
+}

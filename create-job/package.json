@@ -1,0 +1,35 @@
+{
+  "name": "create-job",
+  "version": "1.0.0",
+  "description": "Dispatches jobs for GPU workers",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {},
+  "keywords": [
+    "AWS"
+  ],
+  "author": "JOANNEUM RESEARCH",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-link": "^1.2.11",
+    "apollo-link-ws": "^1.0.17",
+    "aws-sdk": "^2.492.0",
+    "fetch-retry": "^2.2.1",
+    "graphql": "^14.3.1",
+    "graphql-tag": "^2.10.1",
+    "jsonwebtoken": "^8.5.1",
+    "memory-cache": "^0.2.0",
+    "node-fetch": "^2.6.0",
+    "subscriptions-transport-ws": "^0.9.16",
+    "uuid": "^3.3.2",
+    "ws": "^6.2.1"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^8.3.2",
+    "@types/node": "^12.0.2",
+    "@types/uuid": "^3.4.4",
+    "@types/ws": "^6.0.1"
+  }
+}

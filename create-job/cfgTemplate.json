@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "description": "Configuration template for createJob",
+
+  "engineEndpoint":  "unkown-servername",
+  "ssl": true,
+
+  "applicationPath": "/application/{{applicationKey}}",
+  "subscriptionPath": "/subscriptions?applicationId={{applicationKey}}&authToken={{authToken}}",
+
+  "applicationKey": "6",
+  "apiAuthMethod": "sha512",
+  "apiKey": "unknown",
+  "apiSecret": "unknown",
+
+  "s3BucketName": "unknown",
+  "s3BucketKey": "unknown",
+
+  "middlewareUrl": "unknown-server-url"
+}
