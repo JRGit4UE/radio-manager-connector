@@ -6,14 +6,14 @@ The connector consists of a subscriber for analysis jobs and a middleware to han
 
 ## Subscriber
 The subscriber app is a *Node.js* application which *GraphQL* subscribes for analysis 
-[jobs](https://google.com) 
+[jobs](https://graphql.org/) 
 
 To build the subscriber, open a shell, *cd* into the *create_job* directory and execute:
 
 ```
 npm install
 ```
-To run the execute execute:
+To run the application execute:
 
 ```
 node index.js
